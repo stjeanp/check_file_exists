@@ -6,7 +6,6 @@ import pytest
 
 from check_file_exists import main
 
-
 test_cases_sys_exit = [
     (
         "",  # No argument passed

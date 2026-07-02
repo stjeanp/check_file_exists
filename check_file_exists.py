@@ -8,7 +8,6 @@ import os
 from typing import Any
 import sys
 
-
 states = {
     "OK": 0,
     "WARNING": 1,

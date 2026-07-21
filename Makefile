@@ -1,24 +1,24 @@
 .DEFAULT_GOAL := test
 
 test_clean:
-	coverage erase
+	poetry run coverage erase
 	touch check_file_exists.py
 
 mypy:
-	mypy
+	poetry run mypy
 
 pylint:
-	pylint check_file_exists.py
+	poetry run pylint check_file_exists.py
 
 pytest:
-	coverage erase
-	pytest
-	coverage report -m --fail-under=100
+	poetry run coverage erase
+	poetry run pytest
+	poetry run coverage report -m --fail-under=100
 
 black:
-	black check_file_exists.py tests
+	poetry run black check_file_exists.py tests
 
 pip-audit:
-	pip-audit --desc on
+	poetry run pip-audit --desc on
 
 test: mypy pylint pytest black pip-audit
